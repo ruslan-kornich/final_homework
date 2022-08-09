@@ -1,9 +1,9 @@
+from final_homework.app.utils import google_sheets
 from final_homework.app.models.Order import Order
 
+data = google_sheets.main()
 
-def fill_up_database_values():
-    for order in [12121, 1212, 1555, 115]:
-        Order.objects.get_or_create(
-            order=order,
-            description=f"Order number {order}",
-        )
+
+for row in data:
+    print(data)
+
